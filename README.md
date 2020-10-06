@@ -117,7 +117,8 @@ src
 
 [Symptomatic ERD](https://drive.google.com/file/d/1ny6sIjF1ULhZpsQpueeE4BXVt89Frp35/view?usp=sharing)
 
-![]
+![ERD image](symptomaticERD.png)
+<img src="symptomaticERD.png" width="100">
 <br>
 
 ***
