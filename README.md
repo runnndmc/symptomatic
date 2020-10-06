@@ -79,7 +79,7 @@ src
       |__ Login.jsx
       |__ Home.jsx 
       |__ MySymptoms.jsx
-      |__ Calendar.jsx
+      |__ MyCalendar.jsx
       |__ AddSymptom.jsx
       |__ SymptomDetail.jsx
       |__ OccurrenceDetail.jsx
@@ -113,7 +113,25 @@ src
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Create backend models    |    H     |     1 hr      |   1   hrs     |   3hr     |
+| Create backend models    |    H     |     1 hr      |   1   hr     |   -     |
+| Create controllers    |    H     |     2 hrs      |   2hrs     |   -     |
+| Set up routes    |    H     |     1 hr      |   1   hr     |   -     |
+| Set up user auth    |    H     |     2 hr      |   2   hrs     |   -     |
+| Create app architecture    |    H     |     1 hr      |   1   hr     |   -     |
+| Create Login/Register ability    |    H     |     2 hr      |   2   hrs     |   -     |
+| Layout component and rendering on home    |    H     |     1 hr      |   1   hr     |   -     |
+| Create MySymptoms screen    |    H     |     2 hr      |   2  hrs     |   -     |
+| Create MyCalendar screen    |    H     |     2 hr      |   2  hrs     |   -     |
+| Create Calendar    |    H     |     3 hrs      |   3  hrs     |   -     |
+| Create SymptomDetail screen    |    H     |     2 hr      |   2  hrs     |   -     |
+| Create SymptomCard    |    H     |     1 hr      |   1  hr     |   -     |
+| Create AddSymptom screen    |    H     |     2 hr      |   2  hrs     |   -     |
+| Make NewSymptomForm functional    |    H     |     2 hr      |   2  hrs     |   -     |
+| Create Pain component    |    H     |     1 hr      |   1  hr     |   -     |
+| Create OccurrenceDetail screen    |    L     |     2 hr      |   2  hrs     |   -     |
+| Create OccurrenceCard    |    L     |     1 hr      |   1  hr     |   -     |
+| Create MySymptoms screen    |    L     |     2 hr      |   2  hrs     |   -     |
+| Create Graph    |    L     |     1 hr      |   1  hr     |   -     |
 
 | TOTAL               |          |     - hrs      |    -hrs     |     -hrs   |
 
