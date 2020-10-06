@@ -66,7 +66,8 @@ src
       |__ Calendar.jsx 
       |__ SymptomCard.jsx
       |__ Pain.jsx 
-      |__ SymptomSummary.jsx 
+      |__ OccurrenceCard.jsx 
+      |__ NewSymptomForm.jsx 
 |__ containers/
       |__ MainContainer.jsx
 |__ shared/
@@ -80,8 +81,8 @@ src
       |__ MySymptoms.jsx
       |__ Calendar.jsx
       |__ AddSymptom.jsx
-      |__ Symptom.jsx
-      |__ CalendarDetail.jsx
+      |__ SymptomDetail.jsx
+      |__ OccurrenceDetail.jsx
       
 
 ```
@@ -91,12 +92,19 @@ src
 
 |  Component   |    Type    | state | props | Description                                                      |
 | :----------: | :--------: | :---: | :---: | :--------------------------------------------------------------- |
-|    Header    | functional |   n   |   n   | _The header will contain the navigation and logo - it will direct the user Home._               |
-|  HeaderTable  | functional |   y   |   n   | _The header table will provide a number of movies, reviews and the highest rating._       |
-|   MovieCard    |   functional    |   y   |   y   | _Users will be able to see a preview of what movies have been watched  _      |
-| Sort | functional |   y   |   n   | _ Have the ability to sort through the movies that are posted and look for the most recently viewed._                 |
-|    RatingBubbles    | functional |   y   |   n   | _Have the user be able to click on how many starts they think the movie deserves._ |
-|    CreateForm    | functional |   y   |   y   | _Give the user the ability to create a new review or a movie for the site._ |
+|  Calendar  | functional |   y   |   y   | _The calendar will provide a month layout of what days each symptom occurred ._       |
+|   SymptomCard    |   functional    |   n   |   y   | _Users will be able to see the description, time and duration for every symptom occurence  _      |
+| Pain | functional |   y   |   n   | _ Have the user be able to click on what pain level they're at._                 |
+|    OccurrenceCard    | functional |   n   |   y   | _A summary of what the occurrence is._ |
+|    NewSymptomForm    | functional |   y   |   y   | _Give the user the ability to create a new symptom occurrence._ |
+|    Graph    | functional |   y   |   y   | _The graph will be reuseable component to determine what percent of symptoms rank highest._               |
+
+
+
+#### Component Tree
+
+
+
 
 
 #### Time Estimates
