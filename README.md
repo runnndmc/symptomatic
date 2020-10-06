@@ -115,9 +115,9 @@ src
 
 #### ERD Model
 
-[MovieWorm ERD](https://drive.google.com/file/d/1ny6sIjF1ULhZpsQpueeE4BXVt89Frp35/view?usp=sharing)
+[Symptomatic ERD](https://drive.google.com/file/d/1ny6sIjF1ULhZpsQpueeE4BXVt89Frp35/view?usp=sharing)
 
-
+![]
 <br>
 
 ***
