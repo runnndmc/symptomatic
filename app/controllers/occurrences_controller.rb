@@ -38,6 +38,13 @@ class OccurrencesController < ApplicationController
     @occurrence.destroy
   end
 
+  def add_symptom_to_occurrence
+    @symptom = Symptom.find(params[:symptom_id])
+    @occurrence = Occurrence.find(params[:id])
+    @symptom.occurrence.push(@occurrence)
+    render json: @symptom, include: :occurrences
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_occurrence
