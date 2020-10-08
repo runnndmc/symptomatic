@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  symptom: MyString
+  description: MyText
+  pain_level: 1
+  user: one
+
+two:
+  symptom: MyString
+  description: MyText
+  pain_level: 1
+  user: two
