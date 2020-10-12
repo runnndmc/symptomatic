@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 2020_10_08_205354) do
   enable_extension "plpgsql"
 
   create_table "occurrences", force: :cascade do |t|
-    t.time "occurrence_time"
+    t.time "occurrence_time" #correct full date 
     t.string "time"
-    t.time "duration"
+    t.time "duration" 
     t.string "length_lasted"
     t.bigint "symptom_id", null: false
     t.bigint "user_id", null: false
