@@ -1,22 +1,50 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Route, Switch, useHistory } from 'react-router-dom';
 
 import './App.css';
 import Login from './screens/Login';
+import Main from './screens/Main';
 import Register from './screens/Register';
+import { loginUser, registerUser, removeToken } from './services/auth';
 import Layout from './shared/Layout';
 
 function App() {
+const [currentUser, setCurrentUser] = useState(null)
+const history = useHistory()
+
+const handleLogin = async(formData) =>{ //call an async function that takes in form data
+  const currentUser = await loginUser(formData)// await a response - grab the loginUser function that calls the api and verifies token
+  setCurrentUser(currentUser) //set the state to be the resp
+  history.push('/main') //return it back to the homepage
+}
+
+const handleRegister = async (formData) => { //call an async function that takes in form data
+  const newUser = await registerUser(formData)// await a response - grab the loginUser function that calls the api and verifies token
+  setCurrentUser(newUser)//set the state to be the resp
+  history.push('/register')//return it back to the homepage
+}
+
+const handleLogout = () => { //call an anonymous
+  localStorage.removeItem('authToken')
+  removeToken()
+  setCurrentUser(null)
+}
   return (
-    <Layout>
+    <Layout
+        currentUser={currentUser}
+        handleLogout={handleLogout}>
       <Switch>
 
         <Route exact path='/'>
-          <Login />
+          <Login handleLogin={handleLogin}/>
         </Route>
 
         <Route exact path='/register'>
-          <Register />
+          <Register handleRegister={handleRegister}/>
+        </Route>
+
+        <Route exact path='/main'>
+          <Main currentUser={currentUser} />
         </Route>
 
       </Switch>
