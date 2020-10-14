@@ -27,8 +27,8 @@ const handleLogin = async(formData) =>{ //call an async function that takes in f
 }
 
 const handleRegister = async (formData) => { //call an async function that takes in form data
-  const newUser = await registerUser(formData)// await a response - grab the loginUser function that calls the api and verifies token
-  setCurrentUser(newUser)//set the state to be the resp
+  const currentUser = await registerUser(formData)// await a response - grab the loginUser function that calls the api and verifies token
+  setCurrentUser(currentUser)//set the state to be the resp
   history.push('/')//return it back to the homepage
 }
 
@@ -40,7 +40,8 @@ const handleLogout = () => { //call an anonymous
   return (
     <Layout
         currentUser={currentUser}
-        handleLogout={handleLogout}>
+        handleLogout={handleLogout}
+    >
       <Switch>
 
         <Route exact path='/'>

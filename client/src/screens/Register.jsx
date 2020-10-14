@@ -8,6 +8,7 @@ const Register = (props) => {
   });
   const {username, password} = formData;
   const {handleRegister} = props
+  
   const handleChange = (e) => { //when are we changing it
     const { name, value } = e.target; //what are we changing when we're envoked
     setFormData((prevState) => ({ //what state are we changing it to
