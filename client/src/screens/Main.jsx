@@ -17,15 +17,14 @@ const Main = (props) => {
 
 
       <div className="all-symptoms">
-        {currentUser && (
-          <>
+        
+      
             <Link to="/symptoms">
               <div>
                 <h5>My Symptoms</h5>
               </div>
             </Link>
-          </>
-        )}
+        
       </div>
 
 
