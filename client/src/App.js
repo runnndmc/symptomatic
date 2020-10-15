@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
 
 import './App.css';
-import Login from './screens/Login';
-import Main from './screens/Main';
-import Register from './screens/Register';
-import { loginUser, registerUser, removeToken, verifyUser } from './services/auth';
 import Layout from './shared/Layout';
+import MainContainer from './containers/MainContainer';
+import Login from './screens/Login';
+import Register from './screens/Register';
+
+import { loginUser, registerUser, removeToken, verifyUser } from './services/auth';
+
 
 function App() {
 const [currentUser, setCurrentUser] = useState(null)
@@ -53,7 +55,7 @@ const handleLogout = () => { //call an anonymous
         </Route>
 
         <Route exact path='/main'>
-          <Main 
+          <MainContainer
             currentUser={currentUser} 
             handleLogout={handleLogout}
           />
