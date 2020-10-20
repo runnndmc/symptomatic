@@ -6,12 +6,12 @@ const Register = (props) => {
     username: "",
     password: "",
   });
-  const {username, password} = formData;
-  const {handleRegister} = props
-  
+  const { username, password } = formData;
+  const { handleRegister } = props;
+
   const handleChange = (e) => { //when are we changing it
     const { name, value } = e.target; //what are we changing when we're envoked
-    setFormData((prevState) => ({ //what state are we changing it to
+    setFormData((prevState) => ({//what state are we changing it to
       ...prevState, //how do we insert it
       [name]: value, //how it it being saved
     }));
@@ -20,10 +20,11 @@ const Register = (props) => {
   return (
     <>
       <form
-        onSubmit={ (e) => {
-            e.preventDefault()
-            handleRegister(formData)
-        }}>
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleRegister(formData);
+        }}
+      >
         <h2>Register</h2>
         <label>
           Username:
@@ -46,7 +47,7 @@ const Register = (props) => {
         <button>Become Fam</button>
       </form>
       <h5>Already Symptomatic?</h5>
-      <Link to="/">
+      <Link to="/login">
         <h5>Login Here</h5>
       </Link>
     </>

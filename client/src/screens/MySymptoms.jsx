@@ -1,23 +1,15 @@
-import React from "react";
-import SymptomCard from "../components/SymptomCard";
+import React from 'react'
 
-const MySymptoms = (props) => {
-  const { currentUser, symptoms } = props;
 
-  return (
-    <>
-      {currentUser && (
+const MySyptoms = () => {
+
+
+
+    return(
         <>
-          <h2>My Symptoms</h2>
-          {symptoms.map((symptom) => (
-            <div key={symptom.id} className="symptom-card">
-              <p>{symptom.symptom}</p>
-            </div>
-          ))}
+        <h1>MY SYMPTOMS</h1>
         </>
-      )}
-    </>
-  );
-};
+    )
+}
 
-export default MySymptoms;
+export default MySyptoms

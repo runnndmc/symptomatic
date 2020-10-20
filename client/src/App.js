@@ -6,13 +6,13 @@ import Layout from "./shared/Layout";
 import MainContainer from "./containers/MainContainer";
 import Login from "./screens/Login";
 import Register from "./screens/Register";
-
 import {
   loginUser,
   registerUser,
   removeToken,
   verifyUser,
 } from "./services/auth";
+
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -30,14 +30,14 @@ function App() {
     //call an async function that takes in form data
     const currentUser = await loginUser(formData); // await a response - grab the loginUser function that calls the api and verifies token
     setCurrentUser(currentUser); //set the state to be the resp
-    history.push("/"); //return it back to the homepage
+    history.push('/'); //return it back to the homepage
   };
 
   const handleRegister = async (formData) => {
     //call an async function that takes in form data
     const currentUser = await registerUser(formData); // await a response - grab the loginUser function that calls the api and verifies token
     setCurrentUser(currentUser); //set the state to be the resp
-    history.push("/login"); //return it back to the homepage
+    history.push('/'); //return it back to the homepage
   };
 
   const handleLogout = () => {
@@ -47,26 +47,28 @@ function App() {
     setCurrentUser(null);
   };
   return (
-    <>
-      <Layout currentUser={currentUser} handleLogout={handleLogout}>
+      <Layout 
+        currentUser={currentUser} 
+        handleLogout={handleLogout}
+      >
+
         <Switch>
-          <Route exact path="/login">
+          <Route exact path='/login'>
             <Login handleLogin={handleLogin} />
           </Route>
 
-          <Route exact path="/register">
+          <Route exact path='/register'>
             <Register handleRegister={handleRegister} />
           </Route>
 
-          <Route exact path="/">
+          <Route exact path='/'>
             <MainContainer
               currentUser={currentUser}
-              handleLogout={handleLogout}
             />
           </Route>
+
         </Switch>
       </Layout>
-    </>
   );
 }
 
