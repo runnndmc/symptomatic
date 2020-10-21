@@ -28,6 +28,7 @@ const MainContainer = (props) => {
                     symptoms={symptoms}
                 />
             </Route>
+            <Route exact path='/symptoms/:id' component={SymptomDetail} />
         </Switch>
     )
 }

@@ -5,7 +5,7 @@ const MySyptoms = (props) => {
   const { symptoms, currentUser } = props;
 
   const cards = symptoms.map(symptom => (
-    <SymptomCard symptom={symptom.symptom} pain={symptom.pain_level} description={symptom.description} key={symptom.id}/>
+    <SymptomCard symptom={symptom.symptom} pain={symptom.pain_level} key={symptom.id} id={symptom._id}/>
     ))
 
   return (
