@@ -1,23 +1,19 @@
 import React from "react";
 import SymptomCard from "../components/SymptomCard";
 
-const MySymptoms = (props) => {
-  const { currentUser, symptoms } = props;
+const MySyptoms = (props) => {
+  const { symptoms, currentUser } = props;
+
+  const cards = symptoms.map(symptom => (
+    <SymptomCard symptom={symptom.symptom} pain={symptom.pain_level} description={symptom.description} key={symptom.id}/>
+    ))
 
   return (
     <>
-      {currentUser && (
-        <>
-          <h2>My Symptoms</h2>
-          {symptoms.map((symptom) => (
-            <div key={symptom.id} className="symptom-card">
-              <p>{symptom.symptom}</p>
-            </div>
-          ))}
-        </>
-      )}
+      <h1>MY SYMPTOMS</h1>
+        {cards}    
     </>
   );
 };
 
-export default MySymptoms;
+export default MySyptoms;

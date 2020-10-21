@@ -1,11 +1,18 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
-const SymptomCard = () => {
+const SymptomCard = (props) => {
+    const {symptom, pain, description, key} = props
 
     return(
-        <>
-        <h2>all symptoms!</h2>
-        </>
+        <div key={key}>
+            {/* <Link to={`/symptoms/${symptoms._id}`}> */}
+            <h3>SYMPTOM</h3>
+            <p>{symptom}</p>
+            <p>{pain}</p>
+
+            {/* </Link> */}
+        </div>
     )
 }
 

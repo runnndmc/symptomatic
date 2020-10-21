@@ -1,30 +1,21 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Layout from "../shared/Layout";
-import MySymptoms from "./MySymptoms";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import MySyptoms from './MySymptoms'
+
 
 const Main = (props) => {
-  const {symptoms, currentUser} = props;
+const {currentUser, symptoms} = props
 
-  return (
-    <>
-      <h2>PAGE : MAIN</h2>
+    return(
+        <>
+            <h3>Main Page</h3>
+ 
+            <MySyptoms 
+                symptoms={symptoms}
+                currentUser={currentUser}
+            />
+        </>
+    )
+}
 
-      <div className="all-symptoms">
-        <Link to="/symptoms">
-          <div>
-            <h5>My Symptoms</h5>
-          </div>
-        </Link>
-      </div>
-
-      
-        <div>
-          <h5>New Symptom</h5>
-        </div>
-    
-    </>
-  );
-};
-
-export default Main;
+export default Main

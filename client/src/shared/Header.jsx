@@ -1,11 +1,22 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
+import './header.css'
 
-const Header = () => {
+const Header = (props) => {
+    const {currentUser, handleLogout} = props
 
     return(
-        <>
-            <h1>Symptomatic</h1>
-        </>
+        <header>
+            <h1 className='logo'>Symptomatic</h1>
+        {
+            currentUser ?
+              <div>
+                <p>{currentUser.username}</p>
+                <button onClick={handleLogout}>Logout</button>
+              </div> :
+              <Link to='/login'>Login/Register</Link>
+        }
+        </header>
     )
 }
 
