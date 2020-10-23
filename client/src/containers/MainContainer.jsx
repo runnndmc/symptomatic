@@ -1,10 +1,11 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
-
 import { Route, Switch } from 'react-router-dom'
-import Main from '../screens/Main'
+
 import MySyptoms from '../screens/MySymptoms'
+import SymptomDetail from '../screens/SymptomDetail'
+
 import { getAllSymptoms } from '../services/symptoms'
 
 
@@ -23,12 +24,17 @@ const MainContainer = (props) => {
     return(
         <Switch>
             <Route exact path="/">
-                <Main 
+                <MySyptoms 
                     currentUser={currentUser}
                     symptoms={symptoms}
                 />
             </Route>
-            <Route exact path='/symptoms/:id' component={SymptomDetail} />
+            <Route exact path='/symptoms/:id'>
+                <SymptomDetail 
+                    currentUser={currentUser}
+                    symptoms={symptoms}
+                />
+            </Route>
         </Switch>
     )
 }

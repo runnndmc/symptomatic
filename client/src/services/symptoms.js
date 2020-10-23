@@ -5,3 +5,8 @@ export const getAllSymptoms = async () => {
     return resp.data
 }
 
+export const getOneSymptom = async (id) => {
+    const resp = await api.get(`/symptoms/${id}`)
+    return resp.data
+}
+
