@@ -25,5 +25,5 @@ export const verifyUser = async () => {
   }
 
 export const removeToken = () => {
-    api.defaults.headers.com.authorization = null
+    api.defaults.headers.common.authorization = null
 }
