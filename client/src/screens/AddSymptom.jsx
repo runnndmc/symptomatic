@@ -1,8 +1,7 @@
 import React from 'react'
 
 
-const AddSymptom = (props) => {
-    const {currentUser, createSubmit} = props
+const AddSymptom = () => {
 
     return(
         <>

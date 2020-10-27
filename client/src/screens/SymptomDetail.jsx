@@ -29,7 +29,7 @@ const SymptomDetail = (props) => {
         <>
             <div>
                 <h2> Detail</h2>
-                <h2>{symptom.symptom}</h2>
+                <h2>{symptoms.symptom}</h2>
             </div>
         </>
     )
