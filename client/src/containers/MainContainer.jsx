@@ -1,18 +1,20 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, useHistory } from 'react-router-dom'
+import AddSymptom from '../screens/AddSymptom'
 
 import MySyptoms from '../screens/MySymptoms'
 import SymptomDetail from '../screens/SymptomDetail'
 
-import { getAllSymptoms } from '../services/symptoms'
+import { getAllSymptoms, postSymptom } from '../services/symptoms'
+
 
 
 const MainContainer = (props) => {
     const {currentUser} = props
     const [symptoms, setSymptoms] = useState([])
-
+    const history = useHistory()
     useEffect(()=> {
         const fetchSymptoms = async () => {
             const symptomsData = await getAllSymptoms()
@@ -21,16 +23,28 @@ const MainContainer = (props) => {
         fetchSymptoms()
     }, [])
 
+    const createSubmit = async (formData) => {
+        const newSymptom = await postSymptom(formData)
+        setSymptoms(prevState => [...prevState, newSymptom])
+        history.push('/')
+    }
+
     return(
         <Switch>
-            <Route exact path="/">
-                <MySyptoms 
+            <Route exact path="/symptoms/new">
+                <AddSymptom 
                     currentUser={currentUser}
-                    symptoms={symptoms}
+                    createSubmit={createSubmit}
                 />
             </Route>
             <Route exact path='/symptoms/:id'>
                 <SymptomDetail 
+                    currentUser={currentUser}
+                    symptoms={symptoms}
+                />
+            </Route>
+            <Route exact path="/">
+                <MySyptoms 
                     currentUser={currentUser}
                     symptoms={symptoms}
                 />
