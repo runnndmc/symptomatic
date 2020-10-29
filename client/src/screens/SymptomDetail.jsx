@@ -7,30 +7,29 @@ import Footer from '../shared/Footer'
 const SymptomDetail = (props) => {
     const {currentUser, symptoms} = props
     
-    const [isLoaded, setLoaded] = useState(false)
+ 
     const [symptom, setSymptom] = useState(null)
     const {id} = useParams()
 
     useEffect(()=> {
-        const fetchSymptom = async () => {
-            const symptom = symptoms.find(symptom => symptom.id === Number(id))
-            setSymptom(symptom)
-            setLoaded(true)
+        if(symptoms.length){
+        const fetchSymptom = symptoms.find(symptom => symptom.id === Number(id))
+        setSymptom(fetchSymptom)
         }
-        fetchSymptom()
-    }, [id])
+    }, [symptoms, id])
 
     console.log(symptom)
 
-    if (!isLoaded) {
-        return <h1>Loading...</h1>
-    }
+
     return(
         <>
-            <div>
-                <h2> Detail</h2>
-                <h2>{symptoms.symptom}</h2>
-            </div>
+           {
+                symptom ? (
+                    <div>
+                        <h2>{symptom.symptom}</h2>
+                    </div>
+                ) : <h2>Loading . . .</h2>
+            }
         </>
     )
 }

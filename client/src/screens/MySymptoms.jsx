@@ -10,6 +10,7 @@ const MySyptoms = (props) => {
 
   return (
     <>
+    <h2>My Symptoms</h2>
       {symptoms.map((symptom) => (
         <div key={symptom.id}>
           {currentUser && currentUser.id === symptom.user_id && (

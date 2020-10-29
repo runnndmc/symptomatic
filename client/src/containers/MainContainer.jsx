@@ -44,7 +44,7 @@ const MainContainer = (props) => {
                     symptoms={symptoms}
                 />
             </Route>
-            <Route path="/">
+            <Route path="/symptoms">
                 <MySymptoms 
                     currentUser={currentUser}
                     symptoms={symptoms}

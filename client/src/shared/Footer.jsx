@@ -10,7 +10,9 @@ const Footer = () => {
             <Link to={'/symptoms/new'}>
                 <h3>Add New Symptom</h3>
             </Link>
-            <h3>My Symptoms</h3>
+            <Link to={'/symptoms'}>
+                <h3>My Symptoms</h3>
+            </Link>
             <h3>My Calendar</h3>
             </footer>
         </>

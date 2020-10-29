@@ -5,7 +5,7 @@ const AddSymptom = () => {
 
     return(
         <>
-        <h2> add new symptom HERE</h2>
+            <h2> add new symptom HERE</h2>
         </>
     )
 }
