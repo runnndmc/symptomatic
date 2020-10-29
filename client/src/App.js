@@ -45,6 +45,7 @@ function App() {
     localStorage.removeItem("authToken");
     removeToken();
     setCurrentUser(null);
+    history.push('/login')
   };
   return (
       <Layout 

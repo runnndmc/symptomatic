@@ -27,6 +27,9 @@ const SymptomDetail = (props) => {
                 symptom ? (
                     <div>
                         <h2>{symptom.symptom}</h2>
+                        <h2>{symptom.description}</h2>
+                        <h2>{symptom.pain_level}</h2>
+
                     </div>
                 ) : <h2>Loading . . .</h2>
             }
