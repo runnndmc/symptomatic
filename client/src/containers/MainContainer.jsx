@@ -30,6 +30,7 @@ const MainContainer = (props) => {
         history.push('/symptoms')
     }
 
+
     return(
         <Switch>
             <Route path="/symptoms/new">

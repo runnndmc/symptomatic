@@ -1,13 +1,14 @@
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import Footer from '../shared/Footer'
+import { Route, Switch, useHistory, useParams } from 'react-router-dom'
+import EditSymptom from './EditSymptom'
+
 
 const SymptomDetail = (props) => {
-    const {currentUser, symptoms} = props
+    const {symptoms} = props
     
- 
+    const history= useHistory()
     const [symptom, setSymptom] = useState(null)
     const {id} = useParams()
 
@@ -20,6 +21,15 @@ const SymptomDetail = (props) => {
 
     console.log(symptom)
 
+    const editSymptom = async (formData) => {
+        const editedSymptom = await setSymptom(id, formData)
+        setSymptom(prevState => prevState.map(symptom => {
+            return symptom.id === Number(id) ? editedSymptom : symptom
+        }))
+        history.push(`symptoms/${id}`)
+    }
+
+
 
     return(
         <>
@@ -30,6 +40,17 @@ const SymptomDetail = (props) => {
                         <h2>{symptom.description}</h2>
                         <h2>{symptom.pain_level}</h2>
 
+                   
+                    
+                    <Switch>
+                        <Route path='symptoms/:id/edit'>
+                            <EditSymptom 
+                                editSymptom={editSymptom}
+                                symptom={symptom}
+                                id={id}
+                            />
+                        </Route>
+                    </Switch>
                     </div>
                 ) : <h2>Loading . . .</h2>
             }
