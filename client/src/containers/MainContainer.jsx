@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import { Route, Switch, useHistory } from 'react-router-dom'
 import AddSymptom from '../screens/AddSymptom'
+import Home from '../screens/Home'
 
 import MySymptoms from '../screens/MySymptoms'
 import SymptomDetail from '../screens/SymptomDetail'
@@ -30,6 +31,7 @@ const MainContainer = (props) => {
         history.push('/symptoms')
     }
 
+
     return(
         <Switch>
             <Route path="/symptoms/new">
@@ -49,6 +51,9 @@ const MainContainer = (props) => {
                     currentUser={currentUser}
                     symptoms={symptoms}
                 />
+            </Route>
+            <Route exact path="/">
+                <Home />
             </Route>
         </Switch>
     )

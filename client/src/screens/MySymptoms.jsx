@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import SymptomCard from "../components/SymptomCard";
+import Footer from "../shared/Footer";
 
 const MySyptoms = (props) => {
   const { symptoms, currentUser } = props;
@@ -23,6 +24,7 @@ const MySyptoms = (props) => {
           )}
         </div>
       ))}
+      <Footer />
     </>
   );
 };

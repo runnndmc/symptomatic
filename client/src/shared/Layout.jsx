@@ -17,7 +17,6 @@ const Layout = (props) => {
                 handleLogout={handleLogout}
             />
             {props.children}
-            <Footer />
         </>
     )
 }
