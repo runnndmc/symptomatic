@@ -1,7 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import { Route, Switch, useHistory, useParams } from 'react-router-dom'
+import { Link, useHistory, useParams } from 'react-router-dom'
+
+import {putSymptom} from '../services/symptoms.js'
 import EditSymptom from './EditSymptom'
 
 
@@ -21,15 +23,6 @@ const SymptomDetail = (props) => {
 
     console.log(symptom)
 
-    const editSymptom = async (formData) => {
-        const editedSymptom = await setSymptom(id, formData)
-        setSymptom(prevState => prevState.map(symptom => {
-            return symptom.id === Number(id) ? editedSymptom : symptom
-        }))
-        history.push(`symptoms/${id}`)
-    }
-
-
 
     return(
         <>
@@ -39,18 +32,9 @@ const SymptomDetail = (props) => {
                         <h2>{symptom.symptom}</h2>
                         <h2>{symptom.description}</h2>
                         <h2>{symptom.pain_level}</h2>
-
-                   
-                    
-                    <Switch>
-                        <Route path='symptoms/:id/edit'>
-                            <EditSymptom 
-                                editSymptom={editSymptom}
-                                symptom={symptom}
-                                id={id}
-                            />
-                        </Route>
-                    </Switch>
+                        <Link to={`/symptoms/${id}/edit`}>
+                            <button>Edit</button>
+                        </Link>
                     </div>
                 ) : <h2>Loading . . .</h2>
             }
