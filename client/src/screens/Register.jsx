@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+import './Register.css'
+
 const Register = (props) => {
   const [formData, setFormData] = useState({
     username: "",
@@ -18,14 +20,15 @@ const Register = (props) => {
   };
 
   return (
-    <>
+    <div className='register-container'>
       <form
+        className='register-form'
         onSubmit={(e) => {
           e.preventDefault();
           handleRegister(formData);
         }}
       >
-        <h2>Register</h2>
+        <h2 className='register-title'>Register</h2>
         <label>
           Username:
           <input
@@ -35,7 +38,7 @@ const Register = (props) => {
             onChange={handleChange}
           />
         </label>
-        <label>
+        <label className='register-password'>
           Password:
           <input
             type="password"
@@ -47,10 +50,10 @@ const Register = (props) => {
         <button>Become Fam</button>
       </form>
       <h5>Already Symptomatic?</h5>
-      <Link to="/login">
+      <Link className='link-login' to="/login">
         <h5>Login Here</h5>
       </Link>
-    </>
+    </div>
   );
 };
 

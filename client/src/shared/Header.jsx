@@ -14,7 +14,7 @@ const Header = (props) => {
                 <p>{currentUser.username}</p>
                 <button onClick={handleLogout}>Logout</button>
               </div> :
-              <Link to='/login'>Login/Register</Link>
+              <Link to='/login'>Login</Link>
         }
         </header>
     )

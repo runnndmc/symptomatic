@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+import './Login.css'
+
 const Login = (props) => {
   const [formData, setFormData] = useState({
     username: "",
@@ -17,14 +19,16 @@ const Login = (props) => {
     }));
   };
   return (
-    <>
-      <form
+    <div className='login-container'>
+      
+      <form 
+        className='login-form'
         onSubmit={(e) => { //track an event
           e.preventDefault(); //but prevent it from happening on render
           handleLogin(formData); //set state of handle function to the
         }}
       >
-        <h2>Login</h2>
+        <h2 className='login-title'>Login</h2>
         <label>
           Username:
           <input
@@ -34,7 +38,7 @@ const Login = (props) => {
             onChange={handleChange}
           />
         </label>
-        <label>
+        <label className='login-password'>
           Password:
           <input
             type="password"
@@ -47,9 +51,9 @@ const Login = (props) => {
       </form>
       <h5>New to Symptomatic?</h5>
       <Link to="/register">
-        <h5>Register Here</h5>
+        <h5 className='link-register'>Register Here</h5>
       </Link>
-    </>
+    </div>
   );
 };
 
