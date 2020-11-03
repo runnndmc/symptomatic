@@ -43,7 +43,7 @@ const AddSymptom = (props) => {
         </label>
         <label>
           Describe more about it:
-          <input
+          <textarea
             type="textarea"
             name="description"
             value={description}

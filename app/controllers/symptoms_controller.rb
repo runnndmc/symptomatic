@@ -1,7 +1,7 @@
 class SymptomsController < ApplicationController
-  before_action :authorize_request, only: [:create, :update, :destroy] 
+  before_action :authorize_request, only: [:show, :create, :update, :destroy] 
   #must authorize req b4 you set the symptom
-  before_action :set_symptom, only: [ :update, :destroy]
+  before_action :set_symptom, only: [ :show, :update, :destroy]
   #because set_symptom references @current_user and has to be authorized before set_symptom
 
   # GET /symptoms

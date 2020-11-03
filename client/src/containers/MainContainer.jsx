@@ -9,7 +9,7 @@ import Home from "../screens/Home";
 import MySymptoms from "../screens/MySymptoms";
 import SymptomDetail from "../screens/SymptomDetail";
 
-import { getAllSymptoms, postSymptom, putSymptom } from "../services/symptoms";
+import { getAllSymptoms, postSymptom, putSymptom, deleteSymptom } from "../services/symptoms";
 
 const MainContainer = (props) => {
   const { currentUser } = props;
@@ -31,12 +31,17 @@ const MainContainer = (props) => {
     history.push("/symptoms");
   };
 
-  const updateSubmit = async (formData, id) => {
-    const editedSymptom = await putSymptom(formData, id)
+  const updateSubmit = async (id, formData) => {
+    const editedSymptom = await putSymptom(id, formData)
     setSymptoms(prevState => prevState.map(symptom => {
         return symptom.id === Number(id) ? editedSymptom : symptom
     }))
     history.push(`/symptoms/${id}`)
+}
+
+const handleDelete = async(id) => {
+    await deleteSymptom(id)
+    setSymptoms(prevState => prevState.filter(symptom => symptom.id !== id))
 }
 
   return (
@@ -48,7 +53,7 @@ const MainContainer = (props) => {
         <EditSymptom updateSubmit={updateSubmit} symptoms={symptoms} id={id} />
       </Route>
       <Route path="/symptoms/:id">
-        <SymptomDetail currentUser={currentUser} symptoms={symptoms} />
+        <SymptomDetail currentUser={currentUser} symptoms={symptoms} handleDelete={handleDelete}/>
       </Route>
       <Route path="/symptoms">
         <MySymptoms currentUser={currentUser} symptoms={symptoms} />
