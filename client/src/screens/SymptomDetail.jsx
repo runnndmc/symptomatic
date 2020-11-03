@@ -8,7 +8,7 @@ import EditSymptom from './EditSymptom'
 
 
 const SymptomDetail = (props) => {
-    const {symptoms} = props
+    const {symptoms, handleDelete} = props
     
     const history= useHistory()
     const [symptom, setSymptom] = useState(null)
@@ -21,7 +21,7 @@ const SymptomDetail = (props) => {
         }
     }, [symptoms, id])
 
-    console.log(symptom)
+    
 
 
     return(
@@ -35,6 +35,7 @@ const SymptomDetail = (props) => {
                         <Link to={`/symptoms/${id}/edit`}>
                             <button>Edit</button>
                         </Link>
+                        <button onClick={() => handleDelete(symptom.id)}>Delete</button>
                     </div>
                 ) : <h2>Loading . . .</h2>
             }
