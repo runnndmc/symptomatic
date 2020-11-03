@@ -1,0 +1,22 @@
+.login-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-title{
+    color: blue;
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+.login-password{
+    padding: 10px;
+    padding-bottom: 20px;
+}
+.link-register{
+    margin-top: 0;
+}

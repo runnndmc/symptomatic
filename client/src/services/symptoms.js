@@ -14,3 +14,8 @@ export const postSymptom = async (formData) => {
     const resp = await api.post(`/symptoms`, { symptom: formData })
     return resp.data
 }
+
+export const putSymptom = async(formData, id) => {
+    const resp = await api.put(`/symptoms/${id}`, {symptom: formData})
+    return resp.data
+}
