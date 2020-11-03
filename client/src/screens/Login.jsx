@@ -47,7 +47,7 @@ const Login = (props) => {
             onChange={handleChange}
           />
         </label>
-        <button>Enter if you DARE</button>
+        <button>Come on In</button>
       </form>
       <h5>New to Symptomatic?</h5>
       <Link to="/register">

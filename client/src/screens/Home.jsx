@@ -1,20 +1,28 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
-const Home = () => {
+const Home = (props) => {
+  const { currentUser } = props;
 
-    return (
+  return (
+    <>
+      {currentUser ? (
         <>
-        <h1> Hello! </h1>
-        <Link to={'/symptoms/new'}>
-        <h3>Add New Symptom</h3>
-        </Link>
-        <Link to={'/symptoms'}>
+          <p className="username"> Hey, {currentUser.username}!</p>
+          <Link to={"/symptoms/new"}>
+            <h3>Add New Symptom</h3>
+          </Link>
+          <Link to={"/symptoms"}>
             <h3>My Symptoms</h3>
-        </Link>
-        <h3>My Calendar</h3>
+          </Link>
         </>
-    )
-}
+      ) : (
+        <>
+          <h2>Login to add your symptoms</h2>
+        </>
+      )}
+    </>
+  );
+};
 
-export default Home
+export default Home;

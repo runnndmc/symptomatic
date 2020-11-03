@@ -1,7 +1,19 @@
 .logo{
     background-color: #d4c1ec;
-    margin-top: 0;
+    margin: 0;
     padding: 20px;
     color: #ffffff;
     text-align: center;
+}
+
+.user-and-logout{
+    color: #ffffff;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: #d4c1ec;
+}
+
+.username{
+    margin: 0;
 }

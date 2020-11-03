@@ -59,7 +59,7 @@ const handleDelete = async(id) => {
         <MySymptoms currentUser={currentUser} symptoms={symptoms} />
       </Route>
       <Route exact path="/">
-        <Home />
+        <Home currentUser={currentUser}/>
       </Route>
     </Switch>
   );
