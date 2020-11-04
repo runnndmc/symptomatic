@@ -9,7 +9,7 @@ const Home = (props) => {
     <>
       {currentUser ? (
         <>
-          <p className="username"> Hey, {currentUser.username}!</p>
+          <h2 className="username"> Hey, {currentUser.username}!</h2>
           <Link to={"/symptoms/new"}>
             <h3>Add New Symptom</h3>
           </Link>

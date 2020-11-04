@@ -1,13 +1,14 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
+import './symptomCard.css'
+
 const SymptomCard = (props) => {
     const {symptom, pain} = props
     
     return(
         <>
-            <h3>SYMPTOM</h3>
-            <p>{symptom}</p>
+            <h2 className='symptom-card-title'>{symptom}</h2>
             <p>{pain}</p>
         </>
     )

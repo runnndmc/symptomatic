@@ -10,7 +10,7 @@ const Header = (props) => {
       <h1 className="logo">Symptomatic</h1>
       {currentUser ? (
         <div className="user-and-logout">
-          <p className="username"> Hey, {currentUser.username}!</p>
+          <p className="username">{currentUser.username} is logged in</p>
           <button onClick={handleLogout}>Logout</button>
         </div>
       ) : (

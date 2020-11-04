@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
 
+import "./addSymptom.css";
+
 const AddSymptom = (props) => {
   const { createSubmit } = props;
   const [formData, setFormData] = useState({
@@ -18,10 +20,11 @@ const AddSymptom = (props) => {
   };
 
   return (
-    <div className="create-form">
-      <h2> add new symptom HERE</h2>
+    <div>
+      <h2 className="add-title">Add a New Symptom</h2>
 
       <form
+        className="create-form"
         onSubmit={(e) => {
           e.preventDefault();
           createSubmit(formData);
@@ -32,33 +35,36 @@ const AddSymptom = (props) => {
           });
         }}
       >
+        <label>What kind of Symptom are you having:</label>
+        <br></br>
+        <input
+          type="text"
+          name="symptom"
+          value={symptom}
+          onChange={handleChange}
+        />
+
         <label>
-          Type of Symptom:
-          <input
-            type="text"
-            name="symptom"
-            value={symptom}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Describe more about it:
+          How would you describe it?
+          </label>
+          <br></br>
           <textarea
             type="textarea"
             name="description"
             value={description}
             onChange={handleChange}
           />
-        </label>
+        
         <label>
           Pain level:
+          </label>
+          <br></br>
           <input
             type="text"
             name="pain_level"
             value={pain_level}
             onChange={handleChange}
           />
-        </label>
         <button>Submit</button>
       </form>
     </div>

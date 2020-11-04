@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import { Link, useHistory, useParams } from 'react-router-dom'
 
 import {putSymptom} from '../services/symptoms.js'
+import Footer from '../shared/Footer.jsx'
 import EditSymptom from './EditSymptom'
 
 
@@ -37,8 +38,9 @@ const SymptomDetail = (props) => {
                         </Link>
                         <button onClick={() => handleDelete(symptom.id)}>Delete</button>
                     </div>
-                ) : <h2>Loading . . .</h2>
+                ) : <h2>You're Symptom was deleted!</h2>
             }
+            <Footer />
         </>
     )
 }
