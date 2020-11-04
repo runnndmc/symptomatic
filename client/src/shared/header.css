@@ -17,3 +17,11 @@
 .username{
     margin: 0;
 }
+
+.not-logged-in-link{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 90%;
+    position: absolute;
+}

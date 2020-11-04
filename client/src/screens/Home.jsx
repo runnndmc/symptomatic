@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Login from "./Login";
 
 const Home = (props) => {
   const { currentUser } = props;
@@ -18,7 +19,7 @@ const Home = (props) => {
         </>
       ) : (
         <>
-          <h2>Login to add your symptoms</h2>
+        <h3>Not logged in Home</h3>
         </>
       )}
     </>

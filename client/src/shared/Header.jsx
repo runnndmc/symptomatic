@@ -14,10 +14,10 @@ const Header = (props) => {
           <button onClick={handleLogout}>Logout</button>
         </div>
       ) : (
-        <>
+        <div className="not-logged-in-link">
           <p>Have a new Symptom?</p>
           <Link to="/login">Login</Link>
-        </>
+        </div>
       )}
     </header>
   );
