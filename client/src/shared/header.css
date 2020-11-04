@@ -20,8 +20,11 @@
 
 .not-logged-in-link{
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    margin-top: 90%;
+    align-items: baseline;
+    margin-top: 80vh;
     position: absolute;
+}
+
+.bottom-login{
+    margin-left: 10px;
 }

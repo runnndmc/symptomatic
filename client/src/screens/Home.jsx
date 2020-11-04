@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Login from "./Login";
+import './home.css';
 
 const Home = (props) => {
   const { currentUser } = props;
@@ -18,9 +18,9 @@ const Home = (props) => {
           </Link>
         </>
       ) : (
-        <>
-        <h3>Not logged in Home</h3>
-        </>
+        <div className="no-login-home-container">
+            <h3>Not logged in Home - insp env - grid with powder blue eyeshadow to be coughing etc</h3>
+        </div>
       )}
     </>
   );

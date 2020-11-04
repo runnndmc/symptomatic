@@ -16,7 +16,7 @@ const Header = (props) => {
       ) : (
         <div className="not-logged-in-link">
           <p>Have a new Symptom?</p>
-          <Link to="/login">Login</Link>
+          <Link className="bottom-login"to="/login">Login</Link>
         </div>
       )}
     </header>
